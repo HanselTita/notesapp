@@ -6,7 +6,7 @@ import { ScreenType } from "../constants/constant"
 const BackButton = ({onButtonClick}) => {
   return (
     <View style={styles.container}>
-      <Icon onPress={()=>onButtonClick(ScreenType.home)} style={styles.button} name="chevron-back-circle" />
+      <Icon onPress={()=>onButtonClick(ScreenType.home)} style={styles.button} name="arrow-back-circle" />
     </View>
   )
 }
