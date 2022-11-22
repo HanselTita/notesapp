@@ -15,6 +15,8 @@ const styles = StyleSheet.create({
     headerContainer: {
         width: "100%",
         height:"13%",
+
+        //if we desire different designs for android and ios, we use Platform.OS
         backgroundColor: Platform.OS == "android" ? "purple" : "brown",
         paddingTop: 30,
     },

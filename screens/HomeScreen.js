@@ -1,17 +1,22 @@
 import { Dimensions, Platform, Pressable, StyleSheet, Text, View } from "react-native"
 import React from "react"
 import Icon from "react-native-vector-icons/Ionicons"
+import { ScreenType } from "../constants/constant"
 
-const HomeScreen = () => {
+const HomeScreen = ({onExit}) => {
   return (
     <View style={styles.container}>
-      <Pressable>
+
+      {/* To be able to press and navigate to the wanted screen, use Pressable, OnPress, onExit and then function
+        ScreenType.'wanted screen' comes from constant.js from constant folder*/}
+        
+      <Pressable onPress={()=>onExit(ScreenType.addNote)}> 
         <View style={styles.itemButton}>
           <Text style={styles.title}>ADD NEW NOTES</Text>
           <Icon style={styles.icon} name="arrow-forward-circle-outline" />
         </View>
       </Pressable>
-      <Pressable>
+      <Pressable onPress={()=>onExit(ScreenType.allNote)}>
         <View style={styles.itemButton}>
           <Text style={styles.title}>VIEW ALL NOTES</Text>
           <Icon style={styles.icon} name="arrow-forward-circle-outline" />
