@@ -4,7 +4,7 @@ import React from 'react'
 const Header = () => {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.headerTitle}>MY NOTE APP.</Text>
+      <Text style={styles.headerTitle}>MY NOTES APP.</Text>
     </View>
   )
 }
