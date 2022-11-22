@@ -9,17 +9,17 @@ const HomeScreen = ({onExit}) => {
 
       {/* To be able to press and navigate to the wanted screen, use Pressable, OnPress, onExit and then function
         ScreenType.'wanted screen' comes from constant.js from constant folder*/}
-        
+
       <Pressable onPress={()=>onExit(ScreenType.addNote)}> 
         <View style={styles.itemButton}>
           <Text style={styles.title}>ADD NEW NOTES</Text>
-          <Icon style={styles.icon} name="arrow-forward-circle-outline" />
+          <Icon style={styles.icon} name="arrow-forward-circle" />
         </View>
       </Pressable>
       <Pressable onPress={()=>onExit(ScreenType.allNote)}>
         <View style={styles.itemButton}>
           <Text style={styles.title}>VIEW ALL NOTES</Text>
-          <Icon style={styles.icon} name="arrow-forward-circle-outline" />
+          <Icon style={styles.icon} name="arrow-forward-circle" />
         </View>
       </Pressable>
     </View>
@@ -65,5 +65,6 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 30,
     paddingTop: 20,
+    color:"brown"
   },
 })
