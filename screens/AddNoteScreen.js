@@ -6,10 +6,9 @@ import { ScreenType } from '../constants/constant'
 
 const AddNoteScreen = () => {
 
-    const [screen, setScreen] = useState("")
+    const [screen, setScreen] = useState(ScreenType.addNote)
   return (
     <View style={styles.container}>
-         <BackButton onButtonClick={(data)=>setScreen(ScreenType.home)}/>
      <AddNote/>
     </View>
   )
