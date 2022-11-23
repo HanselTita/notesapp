@@ -10,11 +10,13 @@ import HomeScreen from "./screens/HomeScreen"
 
 export default function App() {
   const [screen, setScreen] = useState(ScreenType.home)
+  const [notes, setnotes] = useState([])
+
 
   //we use content so that we can navigate the screens when pressed.
   let content
   if (screen === ScreenType.addNote) {
-    content = <AddNoteScreen />
+    content = <AddNoteScreen onSave={(data)=> setnotes([... notes, {id: Date.now(), note: data}])}/>
   } else if (screen === ScreenType.allNote) {
     content = <AllNotesScreen />
   } else if (screen === ScreenType.home) {
@@ -26,7 +28,7 @@ export default function App() {
       />
     )
   }
-
+console.log(notes)
   return (
     <View style={styles.container}>
       <Header />
