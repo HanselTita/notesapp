@@ -29,7 +29,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <BackButton onButtonClick={updateScreen} />
+     { screen !== ScreenType.home && ( <BackButton onButtonClick={updateScreen} />)}
       {content}
     </View>
   )
