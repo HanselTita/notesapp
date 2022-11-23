@@ -12,27 +12,24 @@ export default function App() {
   const [screen, setScreen] = useState(ScreenType.home)
   const [notes, setnotes] = useState([])
 
+  const updateScreen = (data) => {
+    setScreen(data)
+  }
 
   //we use content so that we can navigate the screens when pressed.
   let content
   if (screen === ScreenType.addNote) {
-    content = <AddNoteScreen onSave={(data)=> setnotes([... notes, {id: Date.now(), note: data}])}/>
+    content = <AddNoteScreen onExit={updateScreen} onSave={(data) => setnotes([...notes, { id: Date.now(), note: data }])} />
   } else if (screen === ScreenType.allNote) {
-    content = <AllNotesScreen />
+    content = <AllNotesScreen notes={notes} />
   } else if (screen === ScreenType.home) {
-    content = (
-      <HomeScreen
-        onExit={(data) => {
-          setScreen(data)
-        }}
-      />
-    )
+    content = <HomeScreen onExit={updateScreen} />
   }
-console.log(notes)
+  console.log(notes)
   return (
     <View style={styles.container}>
       <Header />
-      <BackButton onButtonClick={(data)=>setScreen(data)}/>
+      <BackButton onButtonClick={updateScreen} />
       {content}
     </View>
   )

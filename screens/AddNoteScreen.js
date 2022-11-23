@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import BackButton from '../components/BackButton'
 import { ScreenType } from '../constants/constant'
 
-const AddNoteScreen = ({onSave}) => {
+const AddNoteScreen = ({onSave, onExit}) => {
   const [addedText, setAddedText] = useState("")
 
   const handleChange = (val) => {
@@ -13,6 +13,7 @@ const AddNoteScreen = ({onSave}) => {
   const handleClick = () => {
     if (addedText.trim().length > 0) {
       onSave(addedText)
+      onExit(ScreenType.allNote)
     }
   }
 
